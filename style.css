@@ -13,6 +13,9 @@
         -webkit-tap-highlight-color: transparent;
     }
 
+    /* ====================== FONTS ====================== */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Play:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
     /* ====================== DESIGN TOKENS ====================== */
     :root {
         /* Colors*/
@@ -575,7 +578,7 @@
         }
 
         header h1 {
-            font-size: 2.35rem;
+            font-size: 2.2rem;
         }
 
         header p {
@@ -585,7 +588,7 @@
         .content-grid {
             grid-template-columns: 1fr;
             gap: 28px;
-            padding: 0 12px;
+            padding: 0 16px;
         }
 
         .tabs button {
@@ -595,6 +598,10 @@
 
         .content-section {
             margin-bottom: 60px;
+        }
+
+        #bg-canvas {
+        display: none; /* This disables heavy canvas on mobile for better performance */
         }
 
         /* Floating action buttons */
@@ -680,7 +687,7 @@
         body,
         body.print-mode {
             background: white !important;
-            color: #111 !important;
+            color: black !important;
             font-size: 13px;
             line-height: 1.55;
             padding: 0 !important;
@@ -710,6 +717,7 @@
 
         /* Hide unnecessary interactive elements */
         #bg-canvas,
+        .controls-bar,
         .theme-toggle,
         #print-btn,
         #back-to-top,
@@ -751,12 +759,12 @@
         .content-item {
             display: flex !important;
             flex-direction: column;
-            break-inside: avoid;
             page-break-inside: avoid;
-            border: 1.5px solid #64748b !important;
             border-radius: 8px;
             margin-bottom: 16px !important;
             background: white !important;
+            break-inside: avoid;
+            border: 1px solid #ddd;
             box-shadow: none !important;
         }
 
@@ -976,4 +984,4 @@
 
     .support-btn .icon-heart.pulse {
         animation: heartPulse 1.8s infinite ease-in-out;
-    }
+    } */
