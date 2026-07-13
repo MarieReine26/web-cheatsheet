@@ -124,45 +124,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ====================== PRINT BUTTON ====================== //
-
     const printBtn = document.getElementById('print-btn');
 
     if (printBtn) {
-        // Remove previous listeners to avoid duplicates
-        const freshBtn = printBtn.cloneNode(true);
-        printBtn.parentNode.replaceChild(freshBtn, printBtn);
-
-        freshBtn.addEventListener('click', () => {
-            console.log("Print button clicked");
-
-            const searchInput = document.getElementById('searchInput');
-
-            // === PREPARE CONTENT FOR PRINTING ===
-            // Show all tabs
+        printBtn.addEventListener('click', () => {
+            // Show all content for printing
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.style.display = 'block';
             });
-
-            // Show all content items
             document.querySelectorAll('.content-item').forEach(item => {
                 item.style.display = 'flex';
             });
 
-            // Clear search filter
             if (searchInput) searchInput.value = '';
 
-            // Add print mode class
             document.body.classList.add('print-mode');
 
-            // Small delay then print
             setTimeout(() => {
                 window.print();
-
-                // Clean up after printing
                 setTimeout(() => {
                     document.body.classList.remove('print-mode');
                 }, 500);
-            }, 100);
+            }, 150);
         });
     }
 
