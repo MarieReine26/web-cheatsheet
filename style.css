@@ -600,10 +600,6 @@
             margin-bottom: 60px;
         }
 
-        #bg-canvas {
-        display: none; /* This disables heavy canvas on mobile for better performance */
-        }
-
         /* Floating action buttons */
         .theme-toggle,
         #print-btn,
@@ -648,6 +644,10 @@
             padding: 0 8px;
         }
 
+        #bg-canvas {
+            display: none; /* This disables heavy canvas on mobile for better performance */
+        }
+        
         /* Floating buttons - smaller screens */
         .theme-toggle,
         #print-btn,
